@@ -2,6 +2,9 @@
   "name": "llm",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -9,9 +12,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@types/pdf-parse": "^1.1.4",
     "chromadb": "^1.8.1",
-    "ollama": "^0.5.2",
-    "pdf-parse": "^1.1.1"
+    "ollama": "^0.5.2"
   }
 }

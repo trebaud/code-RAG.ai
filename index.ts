@@ -5,7 +5,7 @@ import { collection } from "./db";
 import { loadData } from "./dataLoader";
 import { logger } from "./utils";
 
-const DATA_PATH = process.env.DATA_PATH ?? "data/AWS-course-EC2";
+const DATA_PATH = process.env.DATA_PATH ?? "data/test.txt";
 const QUERY = process.env.QUERY ?? "How to import Chroma?";
 const LLM = process.env.LLM ?? "llama3";
 
