@@ -12,7 +12,7 @@ bun install
 Usage:
 
 ```bash
-QUERY="What function should I use to generate an embedding?" DATA_PATH="/path/to/root/folder" bun run index.ts
+QUERY="What function should I use to generate an embedding?" DATA_PATH="/path/to/root/folder" bun run dev
 ```
 
 ## Dependencies
