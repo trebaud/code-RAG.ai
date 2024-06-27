@@ -63,6 +63,5 @@ export async function loadData(
   accessor: string,
 ): Promise<{ chunks: string[]; id: string }[]> {
   const dataLoader = dataLoaderFactory(accessor);
-  const data = await dataLoader(accessor);
-  return data;
+  return dataLoader(accessor);
 }
