@@ -15,27 +15,9 @@ export function splitFileIntoChunks(text: string, chunkSize: number): string[] {
   const lines = text.split("\n");
   const result: string[] = [];
 
-  const MAX_CHARS_PER_LINE = 200;
-
   for (let i = 0; i < lines.length; i += chunkSize) {
-    const line = lines[i];
-
-    if (line.length > MAX_CHARS_PER_LINE) {
-      // Split the long line into chunks of up to `MAX_CHARS_PER_LINE` characters
-      const chunks: string[] = [];
-      let start = 0;
-
-      while (start < line.length) {
-        const end = Math.min(start + chunkSize, line.length);
-        chunks.push(line.substring(start, end));
-        start = end;
-      }
-
-      // Join the chunks and add to the result array
-      result.push(chunks.join(" "));
-    } else {
-      result.push(line);
-    }
+    const chunk = lines.slice(i, i + chunkSize).join(" ");
+    result.push(chunk);
   }
 
   return result;

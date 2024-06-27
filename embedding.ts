@@ -21,22 +21,22 @@ export async function embedDataInDB(
   collection: any,
 ) {
   logger.log("Embedding data...");
-  let counter = 0;
+  // let counter = 0;
 
   for (const { chunks, id } of data) {
-    for (const chunk of chunks) {
-      renderProgressBar(counter, chunks.length);
+    for (const [idx, chunk] of chunks.entries()) {
+      // renderProgressBar(counter, chunks.length);
       if (typeof chunk !== "string") {
         logger.warn("Detected non string chunk - skipping");
         continue;
       }
       const embedding = await getEmbedding(chunk);
       await collection?.add({
-        ids: [id],
+        ids: [`${id}-${idx}`],
         embeddings: [embedding],
         documents: [chunk],
       });
-      counter++;
+      // counter++;
     }
   }
 }

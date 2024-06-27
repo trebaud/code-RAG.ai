@@ -1,4 +1,4 @@
-# llm
+# RAG code
 
 To install dependencies:
 
@@ -12,4 +12,7 @@ To run:
 bun run index.ts
 ```
 
-This project was created using `bun init` in bun v1.1.13. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+Dependencies
+
+- ollama
+- chroma

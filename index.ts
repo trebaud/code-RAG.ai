@@ -13,7 +13,7 @@ const data = await loadData(DATA_PATH);
 await embedDataInDB(data, collection);
 
 const relevantDocs = await queryEmbedding(QUERY, collection);
-logger.log(relevantDocs);
+logger.log({ relevantDocs });
 const modelQuery = `${QUERY} - Answer that question using the following text as a resource: ${relevantDocs.join(" ")}`;
 
 logger.log(`Query: "${QUERY}" >>`);
