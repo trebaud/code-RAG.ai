@@ -9,7 +9,7 @@ const CHUNK_SIZE = parseInt(process.env.CHUNK_SIZE as string) || 10;
 async function loadFromCodeBase(
   accessor: string,
 ): Promise<{ id: string; chunks: string[] }[]> {
-  const globPattern = "**/*.{ts,json,md}";
+  const globPattern = "**/*.{ts,json,md,vue}";
   const glob = new Glob(globPattern);
 
   const codeSrc = [];
@@ -17,7 +17,7 @@ async function loadFromCodeBase(
   for await (const filePath of glob.scan(accessor)) {
     // TODO parametrize ignore paths
     if (filePath.includes("node_modules")) continue;
-    const [{ chunks, id }] = await loadFromFile(filePath);
+    const [{ chunks, id }] = await loadFromFile(`${accessor}/${filePath}`);
     codeSrc.push({
       id, // maybe concat with file line nb
       chunks,
