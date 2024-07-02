@@ -1,9 +1,12 @@
-🚧 wip
+🏗️ wip
 
 # Code RAG
 
-Query your lcoal LLM about your code base.
+Query your lcoal LLM against your code base.
 Integration between ollama LLMs and chromaDB for Retrieval Augmented Generation.
+
+Future roadmap:
+* integrate with tree-sitter or another source code parser for better chunking of data
 
 ```bash
 bun install
